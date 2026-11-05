@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Realisations() {
   return (
     <>
-      <TitrePage titre="Nos réalisations" intro="Des supports de communication conçus pour être lus, regardés et retenus. Filtrez par type de support." />
+      <TitrePage titre="Nos réalisations" intro="Quelques concepts de communication pour illustrer nos services. Les photos sont des images d’ambiance libres de droits, et ces exemples ne représentent pas des commandes réelles." />
       <section className="container-x py-12 md:py-16">
         <RealisationsGrille realisations={REALISATIONS} />
       </section>
