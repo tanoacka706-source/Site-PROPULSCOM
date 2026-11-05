@@ -132,16 +132,21 @@ type Props = {
   image?: string;
   alt?: string;
   className?: string;
-  /** Affiche la mention « Visuel d'exemple » lorsqu'aucune vraie image n'est fournie. */
+  /** Affiche une mention indiquant que le visuel est un exemple ou un concept. */
   mention?: boolean;
 };
 
-/** Vraie image si elle existe, sinon visuel d'exemple généré (mise en page du support, aux couleurs de la marque). */
+/** Affiche une image fournie ou une maquette générée aux couleurs de la marque. */
 export function Visuel({ categorie, graine: g, image, alt, className = "", mention = false }: Props) {
   if (image) {
     return (
       <div className={`relative aspect-[4/5] overflow-hidden rounded-[10px] bg-line ${className}`}>
         <Image src={image} alt={alt ?? ""} fill sizes="(min-width: 1024px) 380px, (min-width: 640px) 45vw, 92vw" className="object-cover" />
+        {mention && (
+          <span className="absolute bottom-3 left-3 rounded-[4px] bg-white/90 px-2 py-1 text-xs font-medium text-muted">
+            Concept d’exemple
+          </span>
+        )}
       </div>
     );
   }

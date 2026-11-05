@@ -11,60 +11,29 @@ export type Realisation = {
   alt?: string;
 };
 
-// À REMPLACER par les vrais travaux de Propuls Com (voir README, section « Ajouter vos réalisations »).
 export const REALISATIONS: Realisation[] = [
   {
-    slug: "affiche-evenement-culturel",
-    titre: "Affiche d’événement culturel",
+    slug: "festival-des-lagunes",
+    titre: "Festival des Lagunes",
     categorie: "affiche",
-    description: "Affiche grand format pour un événement culturel, lisible de loin.",
+    description: "Concept de campagne pour un festival de musique à Abidjan. Photo d’ambiance libre de droits.",
+    image: "/realisations/festival-concept.jpg",
+    alt: "Scène de concert avec le public et des confettis, photo d’ambiance Unsplash",
   },
   {
-    slug: "flyer-lancement",
-    titre: "Flyer de lancement",
+    slug: "saveurs-abidjan",
+    titre: "Saveurs d’Abidjan",
     categorie: "flyer",
-    description: "Flyer recto-verso pour annoncer l’ouverture d’une activité.",
+    description: "Concept de flyer pour faire découvrir une adresse et ses spécialités. Photo d’ambiance libre de droits.",
+    image: "/realisations/restaurant-concept.jpg",
+    alt: "Plat servi avec des légumes et des épices, photo d’ambiance Unsplash",
   },
   {
-    slug: "carte-visite-professionnelle",
-    titre: "Carte de visite professionnelle",
-    categorie: "carte-de-visite",
-    description: "Carte sobre avec logo, coordonnées et mise en page aérée.",
-  },
-  {
-    slug: "plaquette-presentation",
-    titre: "Plaquette de présentation",
-    categorie: "plaquette",
-    description: "Plaquette à trois volets présentant les services d’une entreprise.",
-  },
-  {
-    slug: "banniere-manifestation",
-    titre: "Bannière de manifestation",
-    categorie: "banniere",
-    description: "Bannière large pour une scène, une entrée ou un stand.",
-  },
-  {
-    slug: "visuels-reseaux-sociaux",
-    titre: "Visuels pour réseaux sociaux",
+    slug: "scene-ouverte",
+    titre: "Scène ouverte",
     categorie: "digital",
-    description: "Série de visuels carrés à la même identité pour animer une page.",
-  },
-  {
-    slug: "identite-association",
-    titre: "Identité visuelle d’une association",
-    categorie: "identite",
-    description: "Logo, palette de couleurs et règles d’usage pour une association.",
-  },
-  {
-    slug: "affiche-promotion",
-    titre: "Affiche promotionnelle",
-    categorie: "affiche",
-    description: "Affiche percutante pour une offre limitée dans le temps.",
-  },
-  {
-    slug: "flyer-annonce",
-    titre: "Flyer d’annonce",
-    categorie: "flyer",
-    description: "Flyer A5 avec un message principal et un appel à l’action clair.",
+    description: "Concept de publication pour annoncer une soirée musicale et mettre les artistes en avant. Photo d’ambiance libre de droits.",
+    image: "/realisations/musique-concept.jpg",
+    alt: "Microphone sur scène éclairé par des projecteurs, photo d’ambiance Unsplash",
   },
 ];

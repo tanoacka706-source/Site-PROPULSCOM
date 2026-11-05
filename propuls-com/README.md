@@ -35,6 +35,15 @@ Sans Supabase, le site s'affiche normalement ; seul l'envoi du formulaire répon
 La clé `service_role` reste côté serveur (route `src/app/api/demandes/route.ts`). Les tables ont la sécurité par ligne (RLS) activée **sans aucune politique** : les clés publiques ne donnent accès à rien.
 Chaque demande reçoit un numéro du type `PC-2610-K7M4`. Les demandes se consultent dans Supabase > Table Editor > `demande`.
 
+### Espace de l'infographe
+
+La page privée `/infographe` permet de consulter toutes les demandes et les coordonnées fournies par les clients. Configurez ces trois variables dans `.env.local` et dans les variables d'environnement de Vercel :
+
+- `INFOGRAPHE_EMAIL` et `INFOGRAPHE_PASSWORD` : identifiants de connexion de l'infographe. Choisissez un mot de passe unique et robuste ; ne le mettez jamais dans le code.
+- `INFOGRAPHE_SESSION_SECRET` : secret aléatoire d'au moins 32 octets, utilisé pour signer les sessions. Vous pouvez le générer avec `node -e "console.log(require('node:crypto').randomBytes(32).toString('base64url'))"`.
+
+La session est conservée dans un cookie HTTP-only pendant huit heures. Les tentatives de connexion sont limitées. Les demandes ne sont accessibles qu'après authentification et ne sont chargées que côté serveur, avec la clé `service_role`. Supabase doit également être configuré pour que les demandes s'affichent.
+
 ## 2. Renseigner les informations de l'agence
 
 Dans `.env.local` (et dans les variables d'environnement de Vercel) :
@@ -46,11 +55,12 @@ Dans `.env.local` (et dans les variables d'environnement de Vercel) :
 
 ## 3. Remplacer les contenus d'exemple
 
-Les réalisations et les modèles actuels sont des **visuels d'exemple générés** (mention « Visuel d'exemple » affichée). À remplacer par les vrais travaux :
+Les réalisations sont des **concepts d'exemple** accompagnés de photos d'ambiance Unsplash ; elles ne représentent pas des commandes réelles de Propuls Com. Pour les remplacer par les vrais travaux :
 
 1. Déposer les images dans `public/realisations/` et `public/modeles/` (format WebP, environ 1200 px de large).
-2. Dans `src/data/realisations.ts` et `src/data/modeles.ts`, renseigner `image` (ex. `"/realisations/affiche-concert.webp"`) et `alt` (description de l'image). La mention disparaît d'elle-même.
-3. Pour ajouter un modèle : nouvelle ligne dans `MODELES` avec un `slug` unique (il est enregistré avec chaque demande).
+2. Dans `src/data/realisations.ts` et `src/data/modeles.ts`, renseigner `image` (ex. `"/realisations/affiche-concert.webp"`) et `alt` (description de l'image). Le badge « Concept d'exemple » s'affiche pour les réalisations illustratives.
+3. Les photos actuelles proviennent d'Unsplash : [festival](https://images.unsplash.com/photo-1492684223066-81342ee5ff30), [restaurant](https://images.unsplash.com/photo-1504674900247-0877df9cc836) et [musique](https://images.unsplash.com/photo-1516280440614-37939bbacd81). Elles sont utilisées selon la [licence Unsplash](https://unsplash.com/license).
+4. Pour ajouter un modèle : nouvelle ligne dans `MODELES` avec un `slug` unique (il est enregistré avec chaque demande).
 
 Les textes des services sont dans `src/data/services.ts`.
 

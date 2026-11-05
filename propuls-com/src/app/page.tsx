@@ -102,6 +102,9 @@ export default function Accueil() {
               Toutes les réalisations
             </Link>
           </div>
+          <p className="mt-3 max-w-2xl text-muted">
+            Des concepts d’exemple illustrés par des photos d’ambiance libres de droits.
+          </p>
           <ul className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {REALISATIONS.slice(0, 3).map((r) => (
               <li key={r.slug}>
